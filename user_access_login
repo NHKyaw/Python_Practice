@@ -1,0 +1,14 @@
+for times in range(3):
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    chance_left = 2 - times
+    if not password.isdigit():
+        print (f"Password Must be Number. You have only {chance_left} chane left")
+    else:
+        if username == "admin" and int(password) == 1234:
+            print ("✅ Login successful!")
+            break
+        elif username != "admin" or password != 1234:
+            print (f"You have only {chance_left} chance left.")
+            if chance_left == 0:
+                print ("Too many Login Failed. Access Locked")
